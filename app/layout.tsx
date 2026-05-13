@@ -34,6 +34,9 @@ export default function RootLayout({
           <a href="/portfolio" className="flex-1 py-3 text-center text-xs text-gray-500 hover:text-white transition-colors">
             PORTFOLIO
           </a>
+          <a href="/ranking" className="flex-1 py-3 text-center text-xs text-gray-500 hover:text-white transition-colors">
+            RANKING
+          </a>
         </nav>
       </body>
     </html>
