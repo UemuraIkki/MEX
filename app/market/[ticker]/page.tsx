@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
+import OrderPanel from './OrderPanel'
 
 export const revalidate = 0
 
@@ -86,11 +87,8 @@ export default async function StockPage({ params }: { params: { ticker: string }
           )}
         </div>
 
-        {/* 注文パネル（Phase 3で本実装） */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-5">
-          <div className="text-xs text-gray-500 tracking-widest mb-4">ORDER</div>
-          <p className="text-xs text-gray-600">注文機能はPhase 3（Mpoint連携）で実装予定</p>
-        </div>
+        {/* 注文パネル */}
+        <OrderPanel stock={stock} />
 
       </main>
     </div>
