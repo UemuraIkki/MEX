@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import OrderPanel from './OrderPanel'
+import PriceChart from './PriceChart'
 
 export const revalidate = 0
 
@@ -47,6 +48,12 @@ export default async function StockPage({ params }: { params: { ticker: string }
         <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-5">
           <div className="text-3xl font-mono font-bold">{price} Mpt</div>
           <div className="text-xs text-gray-500 mt-1">現在価格</div>
+        </div>
+
+        {/* チャート */}
+        <div className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-5">
+          <div className="text-xs text-gray-500 tracking-widest mb-4">CHART</div>
+          <PriceChart history={history ?? []} />
         </div>
 
         {/* 価格履歴 */}
